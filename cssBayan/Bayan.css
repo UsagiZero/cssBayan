@@ -1,0 +1,98 @@
+body {
+    font-style: italic;
+    font-size: 24px;
+    width: 100%;
+}
+.head {
+    width: 50%;
+    margin: auto;
+    margin-block: 0%;
+}
+
+.accordion {
+    width: 100%;
+    max-width: 50%;
+    margin: auto;
+}
+.accordion:hover .accord-title::after {
+    opacity: 1;
+}
+.accord {
+    display:block;
+    border-top: 1px solid #cec8c8;
+    margin-bottom: 10px;
+    position: relative;
+}
+.accord:hover .image-title{
+    color: rgb(7, 141, 141);
+    opacity: 1;
+    max-height: 70%;
+    overflow: visible;
+    transition: 1s;
+}
+.accord-title {
+    font-size: 24px;
+    display: block;
+    cursor: pointer;
+}
+.accord-title::after {
+    opacity: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 15px;
+    top: 3px;
+    transition: 0.3s;
+    background-size: contain;
+    background-image: url("visibilityIcon.svg");
+}
+.accord-title:hover::after{
+    opacity: 1;
+}
+.accord-title:active {
+    color: #593bff;
+}
+.accord-input {
+    appearance: none;
+    position: absolute;
+}
+.accord-input:checked + .accord-title::after{
+    background-image: url("hiddenIcon.svg");
+}
+.accord-input:checked .accord-title::after, .accord-input:checked .image-title, .accord-input:checked ~ .image-title {
+    opacity: 1;
+    max-height: 1000px;
+}
+.image-title {
+    display: block;
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    text-align: center;
+    position: relative;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.image {
+    width: 50%;
+    height: auto;
+}
+
+/*Разрешения экранов*/
+/*Смартфон*/
+@media screen and (max-width: 320px) {
+    body {font: sans-serif;}
+    .accordion {width: 100%;}
+}
+
+/*Планшет*/
+@media screen and (min-width: 820px)  {
+.accordion {width: 100%;}
+} 
+
+/*Монитор*/
+@media screen and (min-width: 1920px) {
+    body {font: Arial;}
+} 
