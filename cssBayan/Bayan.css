@@ -1,5 +1,6 @@
 .head {
     text-align: center;
+    margin-right: 13%;
 }
 
 .accordion {
@@ -7,29 +8,53 @@
     margin: auto;
 }
 .accord {
+    display:block;
     border-top: 1px solid #cec8c8;
     margin-bottom: 10px;
+    position: relative;
+}
+.accord::after {
+    content: "";
+    display: block;
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: black;
 }
 .accord:hover .imageMem{
     color: rgb(7, 141, 141);
+    opacity: 1;
+    max-height: 1000px;
+    overflow: visible;
+    transition: 1s;
+}
+
+.accord-title {
     display: block;
+    cursor: pointer;
+}
+.accord-title:active {
+    color: #593bff;
 }
 .accord-input {
     appearance: none;
     position: absolute;
 }
 .accord-input:checked ~ .imageMem {
-    display: block;
-}
-.accord-title {
-    display: block;
-    cursor: pointer;
+    opacity: 1;
+    max-height: 1000px;
 }
 .imageMem {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
     text-align: center;
-    display: none;
     position: relative;
-
+    cursor: pointer;
+    transition: 0.5s;
 }
 .image {
     width: 50%;
