@@ -1,6 +1,6 @@
 .head {
     text-align: center;
-    margin-right: 13%;
+    margin-inline-end: 13%;
 }
 
 .accordion {
@@ -74,10 +74,15 @@
 
 /*Разрешения экранов*/
 /*Смартфон*/
-@media only screen and (max-width: 600px) {}
+@media screen and (max-width: 320) {
+    body {font: sans-serif;}
+    .head {text-align: left; margin-inline-end: 50%}
+}
 
 /*Планшет*/
-@media only screen and (min-width: 768px) {} 
+@media screen and (min-width: 820px) {} 
 
 /*Монитор*/
-@media only screen and (min-width: 800px) {} 
+@media screen and (min-width: 1920px) {
+    body {font: Arial;}
+} 
