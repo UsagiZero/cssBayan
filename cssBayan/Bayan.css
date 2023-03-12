@@ -1,8 +1,13 @@
+#head {
+    text-align: center;
+}
 .accordion {
-    background-color: white;
-    width: 14;
-    height: 14;
+    position: relative;
 }
-.content {
-    background-color: white;
+.accordion > .accord [type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+    z-index: -1;
 }
+
+#pictureMeM {}
