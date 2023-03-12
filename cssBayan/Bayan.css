@@ -7,34 +7,41 @@
     max-width: 400px;
     margin: auto;
 }
+.accordion:hover .accord-title::after {
+    opacity: 1;
+}
 .accord {
     display:block;
     border-top: 1px solid #cec8c8;
     margin-bottom: 10px;
     position: relative;
 }
-.accord::after {
-    content: "";
-    display: block;
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    right: 15px;
-    top: 50%;
-    transform: translateY(-50%);
-    background-color: black;
-}
-.accord:hover .imageMem{
+.accord:hover .image-title{
     color: rgb(7, 141, 141);
     opacity: 1;
     max-height: 1000px;
     overflow: visible;
     transition: 1s;
 }
-
 .accord-title {
     display: block;
     cursor: pointer;
+}
+.accord-title::after {
+    opacity: 0;
+    content: "";
+    display: block;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    right: 15px;
+    top: 3px;
+    transition: 0.2s;
+    background-size: contain;
+    background-image: url("visibilityIcon.svg");
+}
+.accord-title:hover::after{
+    opacity: 1;
 }
 .accord-title:active {
     color: #593bff;
@@ -43,11 +50,15 @@
     appearance: none;
     position: absolute;
 }
-.accord-input:checked ~ .imageMem {
+.accord-input:checked + .accord-title::after{
+    background-image: url("hiddenIcon.svg");
+}
+.accord-input:checked .accord-title::after, .accord-input:checked .image-title, .accord-input:checked ~ .image-title {
     opacity: 1;
     max-height: 1000px;
 }
-.imageMem {
+.image-title {
+    display: block;
     opacity: 0;
     max-height: 0;
     overflow: hidden;
@@ -60,3 +71,13 @@
     width: 50%;
     height: auto;
 }
+
+/*Разрешения экранов*/
+/*Смартфон*/
+@media only screen and (max-width: 600px) {}
+
+/*Планшет*/
+@media only screen and (min-width: 768px) {} 
+
+/*Монитор*/
+@media only screen and (min-width: 800px) {} 
