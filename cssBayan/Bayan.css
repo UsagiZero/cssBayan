@@ -1,24 +1,37 @@
-#head {
+.head {
     text-align: center;
 }
+
 .accordion {
-    position: relative;
+    max-width: 400px;
+    margin: auto;
 }
 .accord {
-    position: absolute;
-    z-index: -1;
-    opacity: 0;
+    border-top: 1px solid #cec8c8;
+    margin-bottom: 10px;
 }
-.accord:checked ~ .imageMem {
-    max-height: 2500px;
-    -webkit-transition: 2s;
-    -o-transition: 2s;
-    transition: 2s;
+.accord:hover .imageMem{
+    color: rgb(7, 141, 141);
+    display: block;
+}
+.accord-input {
+    appearance: none;
+    position: absolute;
+}
+.accord-input:checked ~ .imageMem {
+    display: block;
+}
+.accord-title {
+    display: block;
+    cursor: pointer;
 }
 .imageMem {
-    max-height: 0;
-    overflow: hidden;
-    -webkit-transition: .3s;
-    -o-transition: .3s;
-    transition: .3s;
+    text-align: center;
+    display: none;
+    position: relative;
+
+}
+.image {
+    width: 50%;
+    height: auto;
 }
