@@ -1,10 +1,17 @@
+body {
+    font-style: italic;
+    font-size: 24px;
+    width: 100%;
+}
 .head {
-    text-align: center;
-    margin-inline-end: 13%;
+    width: 50%;
+    margin: auto;
+    margin-block: 0%;
 }
 
 .accordion {
-    max-width: 400px;
+    width: 100%;
+    max-width: 50%;
     margin: auto;
 }
 .accordion:hover .accord-title::after {
@@ -19,11 +26,12 @@
 .accord:hover .image-title{
     color: rgb(7, 141, 141);
     opacity: 1;
-    max-height: 1000px;
+    max-height: 70%;
     overflow: visible;
     transition: 1s;
 }
 .accord-title {
+    font-size: 24px;
     display: block;
     cursor: pointer;
 }
@@ -36,7 +44,7 @@
     height: 20px;
     right: 15px;
     top: 3px;
-    transition: 0.2s;
+    transition: 0.3s;
     background-size: contain;
     background-image: url("visibilityIcon.svg");
 }
@@ -65,7 +73,7 @@
     text-align: center;
     position: relative;
     cursor: pointer;
-    transition: 0.5s;
+    transition: 0.3s;
 }
 .image {
     width: 50%;
@@ -74,13 +82,15 @@
 
 /*Разрешения экранов*/
 /*Смартфон*/
-@media screen and (max-width: 320) {
+@media screen and (max-width: 320px) {
     body {font: sans-serif;}
-    .head {text-align: left; margin-inline-end: 50%}
+    .accordion {width: 100%;}
 }
 
 /*Планшет*/
-@media screen and (min-width: 820px) {} 
+@media screen and (min-width: 820px)  {
+.accordion {width: 100%;}
+} 
 
 /*Монитор*/
 @media screen and (min-width: 1920px) {
