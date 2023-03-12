@@ -4,10 +4,21 @@
 .accordion {
     position: relative;
 }
-.accordion > .accord [type="checkbox"] {
+.accord {
     position: absolute;
-    opacity: 0;
     z-index: -1;
+    opacity: 0;
 }
-
-#pictureMeM {}
+.accord:checked ~ .imageMem {
+    max-height: 2500px;
+    -webkit-transition: 2s;
+    -o-transition: 2s;
+    transition: 2s;
+}
+.imageMem {
+    max-height: 0;
+    overflow: hidden;
+    -webkit-transition: .3s;
+    -o-transition: .3s;
+    transition: .3s;
+}
